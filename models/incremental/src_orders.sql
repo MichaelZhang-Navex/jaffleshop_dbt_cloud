@@ -12,4 +12,4 @@ from {{ source('ecom', 'raw_orders') }}
 where ordered_at > (select max(ordered_at) from {{ this }})
 {% endif %}
 order by ordered_at
-limit 10000
+limit 50000
