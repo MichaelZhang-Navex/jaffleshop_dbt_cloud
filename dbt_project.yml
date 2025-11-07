@@ -14,7 +14,7 @@ profile: default # Put your profile here
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["data-tests"]
-seed-paths: ["seeds/jaffle-data"]
+seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
@@ -26,11 +26,11 @@ clean-targets:
 vars:
   "dbt_date:time_zone": "America/Los_Angeles"
 
-seeds:
-  jaffle_shop:
-    +schema: raw
-    jaffle-data:
-      +enabled: "{{ var('load_source_data', false) }}"
+# seeds:
+#   jaffle_shop:
+#     +schema: raw
+#     jaffle-data:
+#       +enabled: "{{ var('load_source_data', false) }}"
 
 models:
   jaffle_shop:
